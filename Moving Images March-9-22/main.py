@@ -21,28 +21,11 @@ def car (x, y):
 
 x = (pygame_width * 0.5)
 y = (pygame_height * 0.5)
-x_change = 0
-y_change = 0
-car_speed = 5
 
 while not crashed:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             crashed = True
-
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_LEFT:
-            x_change = -10
-        elif event.key == pygame.K_RIGHT:
-            x_change = 10
-        elif event.key == pygame.K_UP:
-            y_change = -10
-    if event.type == pygame.KEYUP:
-        if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-            x_change = 0
-
-    x += x_change
-    y += y_change
 
     gameDisplay.fill(white)
     car(x, y)
